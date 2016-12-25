@@ -8,6 +8,12 @@ Rails.application.routes.draw do
 
   root 'splash#index'
 
+  namespace :patients do
+    get "profile" => "patients#profile", as: "profile"
+    get "edit_profile" => "patients#edit_profile", as: "edit_profile"
+    put "update_profile" => "patients#update_profile"
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
