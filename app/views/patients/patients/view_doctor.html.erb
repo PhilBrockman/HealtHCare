@@ -1,0 +1,14 @@
+<h3>Doctor's profile</h3>
+<%= @doctor.email %>
+<p>
+<% if @doctor.appointments.any? %>
+  <% @doctor.appointments.each do |a| %>
+    Appointment on <%= a.appointment_date %> with <%= a.patient.email %><br />
+  <% end %>
+<% end %>
+</p>
+
+<%= form_for @appointment, url: {action: :create_appointment}, method: :post do |f| %>
+<p>Make an appointment: <%= f.datetime_select :appointment_date %></p>
+<%= f.submit %>
+<% end %>

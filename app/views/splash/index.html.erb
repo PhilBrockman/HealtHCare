@@ -1,3 +1,11 @@
 
   <h2 class="w3-wide">healtHCare</h2>
-  <p>This is the front page.  Text here is customizable.</p>
+  <p>Connect with doctors.</p>
+
+  <!-- %= link_to "Sign up a new doctor", new_doctor_registration_path % -->
+<% if current_patient %>
+<h3>List of Doctors</h3>
+<% @doctors.each do |d| %>
+  <p>See <%= link_to d.email, patients_doctor_profile_path(d) %> profile to make an appointment.</p>
+<% end %>
+<% end %>

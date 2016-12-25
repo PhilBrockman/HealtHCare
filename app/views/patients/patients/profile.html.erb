@@ -1,1 +1,3 @@
 Something change?  Click <%= link_to "here", patients_edit_profile_path %> to update your profile information.
+
+<%= render partial: "summary", locals: {patient: @patient} %>

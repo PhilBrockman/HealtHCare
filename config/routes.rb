@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :doctors
   devise_for :patients
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -12,6 +13,9 @@ Rails.application.routes.draw do
     get "profile" => "patients#profile", as: "profile"
     get "edit_profile" => "patients#edit_profile", as: "edit_profile"
     put "update_profile" => "patients#update_profile"
+
+    get "doctor/:id" => "patients#view_doctor", as: "doctor_profile"
+    post "make_appointment_with/:id" => "patients#create_appointment"
   end
 
   # Example of regular route:

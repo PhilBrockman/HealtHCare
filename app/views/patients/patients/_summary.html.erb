@@ -1,0 +1,23 @@
+<h3>Personal</h3>
+<p><b>Name:</b> <%= patient.name %> | <%= patient.birthdate %></p>
+<p><b>Height:</b> <%= patient.height %>, <b>BMI</b> <%= patient.bmi %></p>
+<p><b>Bloodgroup:</b> <%= patient.bloodgroup %></p>
+<h3>Medical</h3>
+<table>
+<tr>
+  <td class = "label"><b>TB</b></td>
+  <td><%= patient.tb %></td>
+  <td class = "label"><b>HIV</b></td>
+  <td><%= patient.hiv %></td>
+</tr>
+<tr>
+  <td class = "label"><b>Smoke cigarettes?</b></td>
+  <td><%= patient.cigarettes %></td>
+  <td class = "label"><b>Diabetes?</b></td>
+  <td><%= patient.diabetes %></td>
+</tr>
+</table>
+<p><b>Drug Use:</b> <%= simple_format patient.drug_use %></p>
+
+<p><b>Medication History</b> <%= simple_format patient.medication_history %> </p>
+<p><b>Medical History</b> <%= simple_format patient.medical_history %></p>

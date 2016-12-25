@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  belongs_to: 
+  belongs_to: 
+  appointment_date: 2016-12-25 13:01:20
+
+two:
+  belongs_to: 
+  belongs_to: 
+  appointment_date: 2016-12-25 13:01:20

@@ -16,45 +16,51 @@
   <%= f.text_field :name %>
 </div>
 <div class="field">
-  <p>Email: <%= @candidate.email %>.  <%= link_to "Change email or password", edit_candidate_registration_path %></p>
+  <p>Email: <%= @patient.email %>.  <%= link_to "Change email or password", edit_patient_registration_path %></p>
 </div>
 </fieldset>
 <fieldset>
-  <legend>College</legend>
+  <legend>Personal</legend>
 <div class = "field">
-  <%= f.label :college %><br />
-  <%= f.text_field :college %>
+  <%= f.label :birthdate %>&nbsp;
+  <%= f.date_select :birthdate %>
 </div>
 
 <div class="field">
-  <%= f.label :college_graduation_year %><br />
-  <%= f.text_field :college_graduation_year %>
+  <%= f.label :height %><br />
+  <%= f.text_field :height %>
+</div>
+
+<div class="field">
+  <%= f.label :bmi %><br />
+  <%= f.text_field :bmi %>
 </div>
 
 <div class = "field">
-  <%= f.label :major %><br />
-  <%= f.text_field :major %>
+  <%= f.label :bloodgroup %><br />
+  <%= f.text_field :bloodgroup %>
 </div>
 </fieldset>
 <fieldset>
-  <legend>Resume</legend>
-  Your resume will automatically be added to any applications you submit.
-  <% if @candidate.resume.path %>
-  You can upload a new copy of your resume by selecting a file. <%= link_to "Resume on file", document_path(@candidate.resume) %>
-  <% end %>
-  <%= f.file_field :resume %>
+  <legend>Medical</legend>
+  <%= f.check_box :tb %> <%= f.label :tb, "Do you have TB?" %>  <br />
+  <%= f.check_box :cigarettes %> <%= f.label :cigarettes, "Do you smoke cigarettes?" %> <br />
+  <%= f.check_box :hiv %> <%= f.label :hiv, "Do you have HIV?" %> <br />
+  <%= f.check_box :diabetes %> <%= f.label :diabetes, "Do you have diabetes?" %> <br />
+
+  <p><%= f.label :drug_use %><br />
+  <%= f.text_area :drug_use %></p>
+  <p><%= f.label :medical_history %><br />
+  <%= f.text_area :medical_history %></p>
+  <p><%= f.label :medication_history %><br />
+  <%= f.text_area :medication_history %></p>
+  <!--Your resume will automatically be added to any applications you submit.
+  < % if @candidate.resume.path %>
+  You can upload a new copy of your resume by selecting a file. < %= link_to "Resume on file", document_path(@candidate.resume) %>
+  < % end %>
+  < %= f.file_field :resume %>-->
 </fieldset>
-<fieldset>
-  <legend>KIPP Alumni</legend>
-  <div class="field">
-    <p>Are you an alumni?</p>
-    <%= f.select :alumni, [['Please Select', nil], ['Yes', true], ['No', false]] %>
-</div>
-<div class="field">
-  <%= f.label :alumni_school, "Please indicate the KIPP school(s) that you attended" %><br />
-  <%= f.text_field :alumni_school %>
-</div>
-</fieldset>
+
 
 <%= f.submit "Update Profile" %>
 <% end %>
